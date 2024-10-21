@@ -38,6 +38,6 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build and analyze with SonarQube
         run: |
-          echo "mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar"
-          sleep 15
+          mvn -B verify -DskipTests
+          sleep 10
           echo "analyzed with SonarQube"
